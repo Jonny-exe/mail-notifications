@@ -2,19 +2,16 @@
 require "vendor/autoload.php";
 require "mail_info.php";
 
-$nginx_status = 'curl http://127.0.0.1/nginx_status';
-
-$output = shell_exec($nginx_status);
-
-print_r($mail['from']);
 $from = $mail['from'];
 $to = $mail['to'];
+$content = $mail['content'];
+$subject = $mail['subject'];
 
 $mail = new Nette\Mail\Message;
-$mail->setFrom("RPI <" . $from . ">")
+$mail->setFrom($from)
     ->addTo($to)
-    ->setSubject('Nginx status')
-    ->setBody("This is your nginx status: " . $output);
+    ->setSubject($subject)
+    ->setHtmlBody($content);
 
 
 $mailer = new Nette\Mail\SendmailMailer;

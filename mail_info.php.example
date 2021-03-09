@@ -1,7 +1,8 @@
 <?php
 
+
 $mail = [
-    'text' => "Content",
+    'content' => "Content",
     'from' => "example@gmail.com",
     'to' => "example@gmail.com",
     'subject' => 'Nginx status'
