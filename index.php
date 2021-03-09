@@ -6,10 +6,13 @@ $nginx_status = 'curl http://127.0.0.1/nginx_status';
 
 $output = shell_exec($nginx_status);
 
+print_r($mail['from']);
+$from = $mail['from'];
+$to = $mail['to'];
 
 $mail = new Nette\Mail\Message;
-$mail->setFrom("RPI <" . $mail["from"] . ">")
-    ->addTo($mail["to"])
+$mail->setFrom("RPI <" . $from . ">")
+    ->addTo($to)
     ->setSubject('Nginx status')
     ->setBody("This is your nginx status: " . $output);
 
