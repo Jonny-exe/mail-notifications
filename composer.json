@@ -1,5 +1,0 @@
-{
-    "require": {
-        "nette/mail": "^3.1"
-    }
-}
