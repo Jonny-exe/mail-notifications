@@ -1,0 +1,14 @@
+<?php
+
+$nginx_status = 'curl http://127.0.0.1/nginx_status';
+
+$output = shell_exec($nginx_status);
+
+$mail = [
+    'content' => "<h1>This is your nginx status: <h1>" . $output,
+    'from' => "Server <example@gmail.com>",
+    'to' => "example@gmail.com",
+    'subject' => 'Nginx status'
+];
+
+?>
