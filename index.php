@@ -17,4 +17,4 @@ $mail->setFrom($from)
 $mailer = new Nette\Mail\SendmailMailer;
 $mailer->send($mail);
 
-print "Mail send";
+print "Mail sent";
